@@ -18,6 +18,8 @@
 
 // Constants
 
+// Register Addresses
+	.equ     DWT_CYCCNT,   	0xE0001004 // DWT_CYCCNT reg (RM, pp.3211)
 
 // Start of data section
  		.data

@@ -47,6 +47,13 @@ defined in linker script */
 .word  _ebss
 /* stack used for SystemInit_ExtMemCtl; always internal RAM used */
 
+
+// Register Addresses
+
+	.equ     DEMCR,   		0xe000edfc // DEMCR reg
+	.equ     DWT_CYCCNT,   	0xE0001004 // DWT_CYCCNT reg (RM0433, pp.3211)
+	.equ     DWT_CTRL,   	0xE0001000 // DWT_CTRL   reg (RM0433, pp.3209)
+
 /**
  * @brief  This is the code that gets called when the processor first
  *          starts execution following a reset event. Only the absolutely
@@ -92,6 +99,21 @@ FillZerobss:
 LoopFillZerobss:
   cmp r2, r4
   bcc FillZerobss
+
+// Initialize DWT counters - added for cycle measurements
+  ldr r0, =DEMCR
+  ldr r1, [r0]
+  orr r1,r1,#(1<<24)  // Enabling TRCENA bit (is already on according to SFRs)
+  str r1, [r0]
+
+  ldr r0, =DWT_CYCCNT
+  mov r3,#0
+  str r3,[r0]
+
+  ldr r0, =DWT_CTRL
+  ldr r2, [r0]
+  orr r2,r2,#1      // Enabling CYCCNTENA bit
+  str r2, [r0]
 
 /* Call the application's entry point.*/
 //eternal:  b  eternal

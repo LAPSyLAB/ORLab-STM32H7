@@ -19,7 +19,7 @@
 
 // Constants
 
-	.equ     LEDDELAY,      32000
+	.equ     LEDDELAY,      64000
 
 // For LOOPTC Software delay
 // By default 64MHz internal HSI clock is enabled

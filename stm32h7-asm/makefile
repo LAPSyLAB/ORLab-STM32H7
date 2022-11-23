@@ -2,6 +2,7 @@
 
 ifdef OS
 	TARGET=.\out\Main
+	SHELL=cmd.exe
 else
 	TARGET=./out/Main
 endif

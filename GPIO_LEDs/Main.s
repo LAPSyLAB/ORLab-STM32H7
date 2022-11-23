@@ -23,7 +23,7 @@
 
 // For LOOPTC Software delay
 // By default 64MHz internal HSI clock is enabled
-// Internal loop takes N cycles
+// Internal loop takes approximately 1 cycle per subs/bne instruction pair
 
 // Register Addresses
 // You can find the base addresses for all peripherals from Memory Map section 2.3.2

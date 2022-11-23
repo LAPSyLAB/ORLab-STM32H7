@@ -20,17 +20,25 @@
 //         bne  tloop
 // ------------- konec kode ------------------------
 /*
-╔═══════╤════════════╗
-║ N     │ DWT_CYCCNT ║
-╠═══════╪════════════╣
-║ 100   │ 140        ║
-╟───────┼────────────╢
-║ 200   │ 240        ║
-╟───────┼────────────╢
-║ 500   │ 540        ║
-╟───────┼────────────╢
-║ 64000 │ 64040      ║
-╚═══════╧════════════╝
+// Timings - usually in second or more repetition (on first one cycles are higher)
+╔═══════╤════════════════╗
+║ N     │ DWT_CYCCNT(1st)║
+╠═══════╪════════════════╣
+║ 50    │ 56     (78)    ║
+╟───────┼────────────────╢
+║ 100   │ 106    (128)   ║
+╟───────┼────────────────╢
+║ 200   │ 206            ║
+╟───────┼────────────────╢
+║ 500   │ 506            ║
+╟───────┼────────────────╢
+║ 1000  │ 1006           ║
+╟───────┼────────────────╢
+║ 64000 │ 64006 (64028)  ║
+╚═══════╧════════════════╝
+Comment: difference : r5 instructions are 16bit, r8 instructions are 32 bit, but both with same timing.
+		 if nop is added, for N=64000, results are 96030 and 96006
+Conclusion: branch prediction is the main influencer here.
 */
 
 
@@ -101,13 +109,16 @@ main:
 		ldr r0, [r1,#DWT_CYCCNT]
 
 
-// Prepare any registers for the code
-//		mov r5,#500
+// Prepare initial registers for the code measurement
 		ldr r5,=64000
+
 // Enable DWT Counters
 		ldr r2, [r1,#DWT_CTRL]
 		orr r2,r2,#1      // Enabling CYCCNTENA bit
 		str r2, [r1,#DWT_CTRL]
+
+// Read DWT Counter before value
+		ldr r0, [r1,#DWT_CYCCNT]
 
 // ------------------------------
 // Start of measurement code - use registers r3+ only !
@@ -119,15 +130,17 @@ tloop:  subs r5,r5,#1
 //   End of measurement code
 // ------------------------------
 
-// Read DWT Counter
-		ldr r0, [r1,#DWT_CYCCNT]
+// Read DWT Counter after value
+		ldr r2, [r1,#DWT_CYCCNT]
 
-// Disable DWT Counters - Fast way
+		sub r0,r2,r0   // Difference in r0
+
+// Disable DWT Counters
+		ldr r2, [r1,#DWT_CTRL]
 		bic r2,r2,#1      // Disabling CYCCNTENA bit
 		str r2, [r1,#DWT_CTRL]
 
-// Read DWT Counters
-//		ldr r0, [r1,#DWT_CYCCNT]
+// Read other DWT Counters
 
 		ldr r2, [r1,#DWT_CPICNT]
 		sub r8,r0,r2
@@ -144,7 +157,7 @@ tloop:  subs r5,r5,#1
 		ldr r6, [r1,#DWT_FOLDCNT]
 		add r8,r8,r6
 
-		// r6 contains number of instructions
+		// r8 contains number of instructions
 
 		b main
 

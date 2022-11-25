@@ -1,0 +1,413 @@
+
+.\out\Main.elf:     file format elf32-littlearm
+.\out\Main.elf
+architecture: armv7e-m, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x080002cd
+
+Program Header:
+    LOAD off    0x00010000 vaddr 0x08000000 paddr 0x08000000 align 2**16
+         filesz 0x00000340 memsz 0x00000340 flags r-x
+    LOAD off    0x00020000 vaddr 0x24000000 paddr 0x08000340 align 2**16
+         filesz 0x0000000c memsz 0x00000610 flags rw-
+private flags = 0x5000200: [Version5 EABI] [soft-float ABI]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .isr_vector   00000298  08000000  08000000  00010000  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         000000a8  08000298  08000298  00010298  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       00000000  08000340  08000340  0002000c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .data         0000000c  24000000  08000340  00020000  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .bss          00000000  2400000c  0800034c  0002000c  2**0
+                  ALLOC
+  5 ._user_heap_stack 00000604  2400000c  0800034c  0002000c  2**0
+                  ALLOC
+  6 .ARM.attributes 00000021  00000000  00000000  0002000c  2**0
+                  CONTENTS, READONLY
+  7 .debug_line   000000de  00000000  00000000  0002002d  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  8 .debug_line_str 00000069  00000000  00000000  0002010b  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_info   00000047  00000000  00000000  00020174  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_abbrev 00000026  00000000  00000000  000201bb  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_aranges 00000048  00000000  00000000  000201e8  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_str    00000075  00000000  00000000  00020230  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_rnglists 00000019  00000000  00000000  000202a5  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+SYMBOL TABLE:
+08000000 l    d  .isr_vector	00000000 .isr_vector
+08000298 l    d  .text	00000000 .text
+08000340 l    d  .rodata	00000000 .rodata
+24000000 l    d  .data	00000000 .data
+2400000c l    d  .bss	00000000 .bss
+2400000c l    d  ._user_heap_stack	00000000 ._user_heap_stack
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_line_str	00000000 .debug_line_str
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_rnglists	00000000 .debug_rnglists
+00000000 l    df *ABS*	00000000 startup_stm32h750xbhx.o
+e000edfc l       *ABS*	00000000 DEMCR
+e0001004 l       *ABS*	00000000 DWT_CYCCNT
+e0001000 l       *ABS*	00000000 DWT_CTRL
+080002e0 l       .text	00000000 LoopCopyDataInit
+080002da l       .text	00000000 CopyDataInit
+080002f2 l       .text	00000000 LoopFillZerobss
+080002ee l       .text	00000000 FillZerobss
+0800033c l       .text	00000000 Infinite_Loop
+00000000 l    df *ABS*	00000000 Main.o
+e0001004 l       *ABS*	00000000 DWT_CYCCNT
+24000000 l       .data	00000000 STEV1
+24000004 l       .data	00000000 STEV2
+24000008 l       .data	00000000 VSOTA
+080002a8 l       .text	00000000 __end
+0800033c  w    F .text	00000002 RTC_Alarm_IRQHandler
+0800033c  w    F .text	00000002 HASH_RNG_IRQHandler
+0800033c  w    F .text	00000002 EXTI2_IRQHandler
+0800033c  w    F .text	00000002 TIM8_CC_IRQHandler
+0800033c  w    F .text	00000002 HRTIM1_Master_IRQHandler
+0800033c  w    F .text	00000002 DebugMon_Handler
+0800033c  w    F .text	00000002 UART8_IRQHandler
+0800033c  w    F .text	00000002 SPI4_IRQHandler
+0800033c  w    F .text	00000002 TIM1_CC_IRQHandler
+0800033c  w    F .text	00000002 BDMA_Channel6_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream5_IRQHandler
+0800033c  w    F .text	00000002 HardFault_Handler
+0800033c  w    F .text	00000002 HRTIM1_FLT_IRQHandler
+0800033c  w    F .text	00000002 JPEG_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream5_IRQHandler
+00000400 g       *ABS*	00000000 _Min_Stack_Size
+0800033c  w    F .text	00000002 SysTick_Handler
+0800033c  w    F .text	00000002 BDMA_Channel1_IRQHandler
+0800033c  w    F .text	00000002 HRTIM1_TIMD_IRQHandler
+0800033c  w    F .text	00000002 TAMP_STAMP_IRQHandler
+08000340 g       *ABS*	00000000 _sidata
+0800033c  w    F .text	00000002 PendSV_Handler
+0800033c  w    F .text	00000002 NMI_Handler
+08000340 g       .rodata	00000000 __exidx_end
+0800033c  w    F .text	00000002 EXTI3_IRQHandler
+0800033c  w    F .text	00000002 LPTIM4_IRQHandler
+0800033c  w    F .text	00000002 TIM8_TRG_COM_TIM14_IRQHandler
+0800033c  w    F .text	00000002 LPTIM2_IRQHandler
+0800033c  w    F .text	00000002 DFSDM1_FLT1_IRQHandler
+08000340 g       .text	00000000 _etext
+0800033c  w    F .text	00000002 DMAMUX2_OVR_IRQHandler
+2400000c g       .bss	00000000 _sbss
+0800033c  w    F .text	00000002 TIM8_UP_TIM13_IRQHandler
+0800033c  w    F .text	00000002 I2C3_ER_IRQHandler
+0800033c  w    F .text	00000002 DFSDM1_FLT2_IRQHandler
+0800033c  w    F .text	00000002 MDMA_IRQHandler
+0800033c  w    F .text	00000002 LPTIM3_IRQHandler
+0800033c  w    F .text	00000002 HSEM1_IRQHandler
+0800033c  w    F .text	00000002 EXTI0_IRQHandler
+0800033c  w    F .text	00000002 I2C2_EV_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream2_IRQHandler
+0800033c  w    F .text	00000002 FPU_IRQHandler
+0800033c  w    F .text	00000002 OTG_HS_WKUP_IRQHandler
+0800033c  w    F .text	00000002 FDCAN1_IT1_IRQHandler
+0800033c  w    F .text	00000002 UsageFault_Handler
+0800033c  w    F .text	00000002 LTDC_ER_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream2_IRQHandler
+2400000c g       .bss	00000000 __bss_start__
+0800033c  w    F .text	00000002 HRTIM1_TIME_IRQHandler
+24000000 g       .data	00000000 _sdata
+0800033c  w    F .text	00000002 SPI1_IRQHandler
+0800033c  w    F .text	00000002 TIM6_DAC_IRQHandler
+0800033c  w    F .text	00000002 DCMI_IRQHandler
+0800033c  w    F .text	00000002 HRTIM1_TIMC_IRQHandler
+08000340 g       .rodata	00000000 __exidx_start
+0800033c  w    F .text	00000002 DMA2_Stream3_IRQHandler
+0800033c  w    F .text	00000002 SAI2_IRQHandler
+0800033c  w    F .text	00000002 DFSDM1_FLT3_IRQHandler
+0800033c  w    F .text	00000002 USART6_IRQHandler
+0800033c  w    F .text	00000002 TIM17_IRQHandler
+0800033c  w    F .text	00000002 USART3_IRQHandler
+0800033c  w    F .text	00000002 BDMA_Channel7_IRQHandler
+0800033c  w    F .text	00000002 CRYP_IRQHandler
+2400000c g       .bss	00000000 _ebss
+080002cc  w    F .text	0000004c Reset_Handler
+0800033c  w    F .text	00000002 LPTIM5_IRQHandler
+0800033c  w    F .text	00000002 UART5_IRQHandler
+0800033c  w    F .text	00000002 ADC3_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream0_IRQHandler
+0800033c  w    F .text	00000002 TIM4_IRQHandler
+0800033c  w    F .text	00000002 BDMA_Channel2_IRQHandler
+0800033c  w    F .text	00000002 QUADSPI_IRQHandler
+0800033c  w    F .text	00000002 I2C1_EV_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream6_IRQHandler
+0800033c  w    F .text	00000002 DMAMUX1_OVR_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream1_IRQHandler
+0800033c  w    F .text	00000002 TIM16_IRQHandler
+0800033c  w    F .text	00000002 UART4_IRQHandler
+2400000c g       .bss	00000000 __bss_end__
+0800033c  w    F .text	00000002 BDMA_Channel5_IRQHandler
+0800033c  w    F .text	00000002 TIM3_IRQHandler
+0800033c  w    F .text	00000002 RCC_IRQHandler
+0800033c  w    F .text	00000002 TIM8_BRK_TIM12_IRQHandler
+0800033c  w    F .text	00000002 TIM1_TRG_COM_IRQHandler
+00000200 g       *ABS*	00000000 _Min_Heap_Size
+0800033c g       .text	00000002 Default_Handler
+0800033c  w    F .text	00000002 ECC_IRQHandler
+0800033c  w    F .text	00000002 CEC_IRQHandler
+0800033c  w    F .text	00000002 EXTI15_10_IRQHandler
+0800033c  w    F .text	00000002 BDMA_Channel0_IRQHandler
+0800033c  w    F .text	00000002 ADC_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream7_IRQHandler
+0800033c  w    F .text	00000002 HRTIM1_TIMA_IRQHandler
+0800033c  w    F .text	00000002 SPI5_IRQHandler
+0800033c  w    F .text	00000002 TIM7_IRQHandler
+0800033c  w    F .text	00000002 SDMMC1_IRQHandler
+0800033c  w    F .text	00000002 TIM5_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream7_IRQHandler
+0800033c  w    F .text	00000002 TIM15_IRQHandler
+0800033c  w    F .text	00000002 PVD_AVD_IRQHandler
+0800033c  w    F .text	00000002 I2C3_EV_IRQHandler
+0800033c  w    F .text	00000002 EXTI9_5_IRQHandler
+0800033c  w    F .text	00000002 RTC_WKUP_IRQHandler
+0800033c  w    F .text	00000002 LTDC_IRQHandler
+0800033c  w    F .text	00000002 SAI3_IRQHandler
+0800033c  w    F .text	00000002 ETH_WKUP_IRQHandler
+0800033c  w    F .text	00000002 SPDIF_RX_IRQHandler
+0800033c  w    F .text	00000002 SPI2_IRQHandler
+0800033c  w    F .text	00000002 OTG_HS_EP1_IN_IRQHandler
+0800033c  w    F .text	00000002 MemManage_Handler
+08000298 g     F .text	00000000 main
+0800033c  w    F .text	00000002 DMA1_Stream0_IRQHandler
+0800033c  w    F .text	00000002 SVC_Handler
+0800033c  w    F .text	00000002 CRS_IRQHandler
+0800033c  w    F .text	00000002 EXTI4_IRQHandler
+0800033c  w    F .text	00000002 HRTIM1_TIMB_IRQHandler
+0800033c  w    F .text	00000002 FDCAN2_IT1_IRQHandler
+0800033c  w    F .text	00000002 ETH_IRQHandler
+0800033c  w    F .text	00000002 TIM1_UP_IRQHandler
+0800033c  w    F .text	00000002 BDMA_Channel4_IRQHandler
+0800033c  w    F .text	00000002 OTG_HS_EP1_OUT_IRQHandler
+0800033c  w    F .text	00000002 WWDG_IRQHandler
+0800033c  w    F .text	00000002 SPI6_IRQHandler
+0800033c  w    F .text	00000002 MDIOS_IRQHandler
+0800033c  w    F .text	00000002 I2C4_EV_IRQHandler
+0800033c  w    F .text	00000002 FDCAN2_IT0_IRQHandler
+0800033c  w    F .text	00000002 LPUART1_IRQHandler
+0800033c  w    F .text	00000002 FDCAN1_IT0_IRQHandler
+0800033c  w    F .text	00000002 TIM2_IRQHandler
+0800033c  w    F .text	00000002 OTG_FS_WKUP_IRQHandler
+0800033c  w    F .text	00000002 OTG_HS_IRQHandler
+0800033c  w    F .text	00000002 DMA2D_IRQHandler
+0800033c  w    F .text	00000002 TIM1_BRK_IRQHandler
+24080000 g       .isr_vector	00000000 _estack
+0800033c  w    F .text	00000002 EXTI1_IRQHandler
+0800033c  w    F .text	00000002 SDMMC2_IRQHandler
+2400000c g       .data	00000000 _edata
+0800033c  w    F .text	00000002 OTG_FS_EP1_OUT_IRQHandler
+0800033c  w    F .text	00000002 BDMA_Channel3_IRQHandler
+0800033c  w    F .text	00000002 UART7_IRQHandler
+0800033c  w    F .text	00000002 MDIOS_WKUP_IRQHandler
+0800033c  w    F .text	00000002 USART2_IRQHandler
+0800033c  w    F .text	00000002 DFSDM1_FLT0_IRQHandler
+0800033c  w    F .text	00000002 SAI4_IRQHandler
+08000000 g     O .isr_vector	00000000 g_pfnVectors
+0800033c  w    F .text	00000002 I2C2_ER_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream1_IRQHandler
+0800033c  w    F .text	00000002 FLASH_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream4_IRQHandler
+0800033c  w    F .text	00000002 BusFault_Handler
+0800033c  w    F .text	00000002 USART1_IRQHandler
+0800033c  w    F .text	00000002 OTG_FS_IRQHandler
+0800033c  w    F .text	00000002 SPI3_IRQHandler
+0800033c  w    F .text	00000002 WAKEUP_PIN_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream4_IRQHandler
+0800033c  w    F .text	00000002 OTG_FS_EP1_IN_IRQHandler
+0800033c  w    F .text	00000002 I2C1_ER_IRQHandler
+0800033c  w    F .text	00000002 FMC_IRQHandler
+0800033c  w    F .text	00000002 FDCAN_CAL_IRQHandler
+0800033c  w    F .text	00000002 SWPMI1_IRQHandler
+0800033c  w    F .text	00000002 COMP1_IRQHandler
+0800033c  w    F .text	00000002 LPTIM1_IRQHandler
+0800033c  w    F .text	00000002 I2C4_ER_IRQHandler
+0800033c  w    F .text	00000002 DMA2_Stream6_IRQHandler
+0800033c  w    F .text	00000002 SAI1_IRQHandler
+0800033c  w    F .text	00000002 DMA1_Stream3_IRQHandler
+
+
+
+Disassembly of section .text:
+
+08000298 <main>:
+  		.type  main, %function
+  		.global main
+
+   	   	.align
+main:
+  		ldr r0, =STEV1   // Naslov od STEV1 -> r0
+ 8000298:	4804      	ldr	r0, [pc, #16]	; (80002ac <__end+0x4>)
+  		ldr r1, [r0]    // Vsebina iz naslova v r0 -> r1
+ 800029a:	6801      	ldr	r1, [r0, #0]
+
+  		ldr r0, =STEV2   // Naslov od STEV1 -> r0
+ 800029c:	4804      	ldr	r0, [pc, #16]	; (80002b0 <__end+0x8>)
+  		ldr r2, [r0]	// Vsebina iz naslova v r0 -> r2
+ 800029e:	6802      	ldr	r2, [r0, #0]
+
+  		add r3,r1,r2    // r1 + r2 -> r3
+ 80002a0:	eb01 0302 	add.w	r3, r1, r2
+
+  		ldr r0, =VSOTA   // Naslov od STEV1 -> r0
+ 80002a4:	4803      	ldr	r0, [pc, #12]	; (80002b4 <__end+0xc>)
+  		str r3,[r0]		// iz registra r3 -> na naslov v r0
+ 80002a6:	6003      	str	r3, [r0, #0]
+
+080002a8 <__end>:
+
+__end: 	b 	__end
+ 80002a8:	e7fe      	b.n	80002a8 <__end>
+ 80002aa:	0000      	.short	0x0000
+  		ldr r0, =STEV1   // Naslov od STEV1 -> r0
+ 80002ac:	24000000 	.word	0x24000000
+  		ldr r0, =STEV2   // Naslov od STEV1 -> r0
+ 80002b0:	24000004 	.word	0x24000004
+  		ldr r0, =VSOTA   // Naslov od STEV1 -> r0
+ 80002b4:	24000008 	.word	0x24000008
+ 80002b8:	08000340 	.word	0x08000340
+ 80002bc:	24000000 	.word	0x24000000
+ 80002c0:	2400000c 	.word	0x2400000c
+ 80002c4:	2400000c 	.word	0x2400000c
+ 80002c8:	2400000c 	.word	0x2400000c
+
+080002cc <Reset_Handler>:
+
+  .section  .text.Reset_Handler
+  .weak  Reset_Handler
+  .type  Reset_Handler, %function
+Reset_Handler:
+  ldr   sp, =_estack      /* set stack pointer */
+ 80002cc:	f8df d048 	ldr.w	sp, [pc, #72]	; 8000318 <LoopFillZerobss+0x26>
+
+/* Copy the data segment initializers from flash to SRAM */
+  ldr r0, =_sdata
+ 80002d0:	4812      	ldr	r0, [pc, #72]	; (800031c <LoopFillZerobss+0x2a>)
+  ldr r1, =_edata
+ 80002d2:	4913      	ldr	r1, [pc, #76]	; (8000320 <LoopFillZerobss+0x2e>)
+  ldr r2, =_sidata
+ 80002d4:	4a13      	ldr	r2, [pc, #76]	; (8000324 <LoopFillZerobss+0x32>)
+  movs r3, #0
+ 80002d6:	2300      	movs	r3, #0
+  b LoopCopyDataInit
+ 80002d8:	e002      	b.n	80002e0 <LoopCopyDataInit>
+
+080002da <CopyDataInit>:
+
+CopyDataInit:
+  ldr r4, [r2, r3]
+ 80002da:	58d4      	ldr	r4, [r2, r3]
+  str r4, [r0, r3]
+ 80002dc:	50c4      	str	r4, [r0, r3]
+  adds r3, r3, #4
+ 80002de:	3304      	adds	r3, #4
+
+080002e0 <LoopCopyDataInit>:
+
+LoopCopyDataInit:
+  adds r4, r0, r3
+ 80002e0:	18c4      	adds	r4, r0, r3
+  cmp r4, r1
+ 80002e2:	428c      	cmp	r4, r1
+  bcc CopyDataInit
+ 80002e4:	d3f9      	bcc.n	80002da <CopyDataInit>
+
+/* Zero fill the bss segment. */
+  ldr r2, =_sbss
+ 80002e6:	4a10      	ldr	r2, [pc, #64]	; (8000328 <LoopFillZerobss+0x36>)
+  ldr r4, =_ebss
+ 80002e8:	4c10      	ldr	r4, [pc, #64]	; (800032c <LoopFillZerobss+0x3a>)
+  movs r3, #0
+ 80002ea:	2300      	movs	r3, #0
+  b LoopFillZerobss
+ 80002ec:	e001      	b.n	80002f2 <LoopFillZerobss>
+
+080002ee <FillZerobss>:
+
+FillZerobss:
+  str  r3, [r2]
+ 80002ee:	6013      	str	r3, [r2, #0]
+  adds r2, r2, #4
+ 80002f0:	3204      	adds	r2, #4
+
+080002f2 <LoopFillZerobss>:
+
+LoopFillZerobss:
+  cmp r2, r4
+ 80002f2:	42a2      	cmp	r2, r4
+  bcc FillZerobss
+ 80002f4:	d3fb      	bcc.n	80002ee <FillZerobss>
+
+// Initialize DWT counters - added for cycle measurements
+  ldr r0, =DEMCR
+ 80002f6:	480e      	ldr	r0, [pc, #56]	; (8000330 <LoopFillZerobss+0x3e>)
+  ldr r1, [r0]
+ 80002f8:	6801      	ldr	r1, [r0, #0]
+  orr r1,r1,#(1<<24)  // Enabling TRCENA bit (is already on according to SFRs)
+ 80002fa:	f041 7180 	orr.w	r1, r1, #16777216	; 0x1000000
+  str r1, [r0]
+ 80002fe:	6001      	str	r1, [r0, #0]
+
+  ldr r0, =DWT_CYCCNT
+ 8000300:	480c      	ldr	r0, [pc, #48]	; (8000334 <LoopFillZerobss+0x42>)
+  mov r3,#0
+ 8000302:	f04f 0300 	mov.w	r3, #0
+  str r3,[r0]
+ 8000306:	6003      	str	r3, [r0, #0]
+
+  ldr r0, =DWT_CTRL
+ 8000308:	480b      	ldr	r0, [pc, #44]	; (8000338 <LoopFillZerobss+0x46>)
+  ldr r2, [r0]
+ 800030a:	6802      	ldr	r2, [r0, #0]
+  orr r2,r2,#1      // Enabling CYCCNTENA bit
+ 800030c:	f042 0201 	orr.w	r2, r2, #1
+  str r2, [r0]
+ 8000310:	6002      	str	r2, [r0, #0]
+
+/* Call the application's entry point.*/
+//eternal:  b  eternal
+  bl  main
+ 8000312:	f7ff ffc1 	bl	8000298 <main>
+  bx  lr
+ 8000316:	4770      	bx	lr
+  ldr   sp, =_estack      /* set stack pointer */
+ 8000318:	24080000 	.word	0x24080000
+  ldr r0, =_sdata
+ 800031c:	24000000 	.word	0x24000000
+  ldr r1, =_edata
+ 8000320:	2400000c 	.word	0x2400000c
+  ldr r2, =_sidata
+ 8000324:	08000340 	.word	0x08000340
+  ldr r2, =_sbss
+ 8000328:	2400000c 	.word	0x2400000c
+  ldr r4, =_ebss
+ 800032c:	2400000c 	.word	0x2400000c
+  ldr r0, =DEMCR
+ 8000330:	e000edfc 	.word	0xe000edfc
+  ldr r0, =DWT_CYCCNT
+ 8000334:	e0001004 	.word	0xe0001004
+  ldr r0, =DWT_CTRL
+ 8000338:	e0001000 	.word	0xe0001000
+
+0800033c <ADC3_IRQHandler>:
+ * @retval None
+*/
+    .section  .text.Default_Handler,"ax",%progbits
+Default_Handler:
+Infinite_Loop:
+  b  Infinite_Loop
+ 800033c:	e7fe      	b.n	800033c <ADC3_IRQHandler>
+	...

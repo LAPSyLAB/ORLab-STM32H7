@@ -120,6 +120,8 @@ main:
 // Read DWT Counter before value
 		ldr r0, [r1,#DWT_CYCCNT]
 
+// To try: ISB  ; Instruction Synchronisation Barrier
+
 // ------------------------------
 // Start of measurement code - use registers r3+ only !
 // ------------------------------

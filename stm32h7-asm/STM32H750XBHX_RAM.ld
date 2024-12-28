@@ -134,6 +134,20 @@ SECTIONS
     _edata = .;        /* define a global symbol at data end */
   } >DTCMRAM AT> RAM_EXEC
 
+  /* used by the startup to initialize data */
+  _sisram = LOADADDR(.sram);
+  /* Initialized data sections goes into SRAM, have to copy content manually */
+  .sram :
+  {
+    . = ALIGN(4);
+    _ssram = .;        /* create a global symbol at sram start */
+    KEEP(*(.sram))     /* .data sections */
+    *(.sram*)          /* .data* sections */
+
+    . = ALIGN(4);
+    _esram = .;        /* define a global symbol at sram end */
+  } >RAM_D2 AT> RAM_EXEC
+
   /* Uninitialized data section */
   . = ALIGN(4);
   .bss :

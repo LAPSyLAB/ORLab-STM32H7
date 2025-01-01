@@ -10,8 +10,17 @@
 		  .thumb
 
 ///////////////////////////////////////////////////////////////////////////////
-// Meritve
+// Measurements
 ///////////////////////////////////////////////////////////////////////////////
+
+Comment (counters are only approximate):
+Profiling counter accuracy
+The counters provide approximately accurate performance count information, but to keep the implementation and validation cost low, the architecture accepts a reasonable degree of inaccuracy in the counts is acceptable. The architecture does not define a reasonable degree of inaccuracy, but ARM gives the following guidelines:
+• Under normal operating conditions, the counters present an accurate value of the overall system cycle counts.
+• Although the counters can be used with halting debug, they are intended for non-intrusive operation. Entry to or exit from Debug state can be a source of inaccuracy. Counters do not increment when the processor is halted. In Debug state, the overhead associated with STEP and RUN commands from and to the halt condition is implementation defined.
+
+From: https://developer.arm.com/documentation/ddi0403/d/Debug-Architecture/ARMv7-M-Debug/The-Data-Watchpoint-and-Trace-unit/Profiling-counter-support?lang=en
+
 
 //-------------- subs,bne --------------------------
 // 		ldr r5,=N

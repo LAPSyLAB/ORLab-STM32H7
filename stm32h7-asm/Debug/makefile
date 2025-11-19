@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -60,7 +60,7 @@ main-build: stm32h7-asm.elf secondary-outputs
 
 # Tool invocations
 stm32h7-asm.elf stm32h7-asm.map: $(OBJS) $(USER_OBJS) D:\Delovni\CubeIDE\Sluzba\ORLab-STM32H7\stm32h7-asm\STM32H750XBHX_RAM.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32h7-asm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Delovni\CubeIDE\Sluzba\ORLab-STM32H7\stm32h7-asm\STM32H750XBHX_RAM.ld" --specs=nosys.specs -Wl,-Map="stm32h7-asm.map" -Wl,--cref -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb
+	arm-none-eabi-gcc -o "stm32h7-asm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Delovni\CubeIDE\Sluzba\ORLab-STM32H7\stm32h7-asm\STM32H750XBHX_RAM.ld" -Wl,-Map="stm32h7-asm.map" -Wl,--cref -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb
 	@echo 'Finished building target: $@'
 	@echo ' '
 

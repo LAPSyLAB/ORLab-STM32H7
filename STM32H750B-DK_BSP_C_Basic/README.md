@@ -6,6 +6,7 @@ ki meri dostopne čase do SDRAM pomnilnika. Avtor projekta je Patricio Bulić.
 
 Ta projekt pa prikazuje preprosto meritev 3 zakasnitev in prikaz na LCD zaslon.
 Narejen na osnovi BSP paketa in ne uporablja CubeMX generatorja kode.
+Vključen je tudi FreeRTOS in nekaj audio funkcij, ki pa še niso preizkušene.
 
-TODO: manjka vključitev ostalih naprav v demonstracijo vseh (touch, ...)
+TODO: manjka vključitev ostalih naprav v demonstracijo (touch, ...)
 
